@@ -4,4 +4,4 @@ https://github.com/NBALAJI95/ASE-lab-exercises/wiki --> Assignment 1
 Wiki page for assignment 2 (BELOW)
 https://github.com/NBALAJI95/ASE-lab-exercises/wiki/ASE-Assignment-2
 
-https://github.com/NBALAJI95/ASE-lab-exercises/wiki/Assignment-3 --> Assignment 1
+https://github.com/NBALAJI95/ASE-lab-exercises/wiki/Assignment-3 --> Assignment 3
