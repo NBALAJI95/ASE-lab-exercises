@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Assignment 3</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    background-color: lightgreen;
+}
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+input {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+	</style>
+</head>
+
+<body class="body">
+<center>
+<h1 align="absolute" style="text-align: center; color: #1a0188">Search for sentiments in your text!</h1>
+<input type="text" id="txt_Text" placeholder="Enter how you feel" width=50% style="margin-left: 100px"/>
+<button id="btn_getSentiment" class="button" onclick="getSentiment()">Get Sentiment Analysis</button>
+</center>
+<br/><br/>
+<div id="div_sentiment">
+	<center><textarea rows="10%" id="sentiAnal" cols="80%" readonly></textarea></center>
+</div>
+<br/><br/>
+<center>
+<div id="id01">
+	<h2>Text to Speech</h2>
+</div>
+</center>
+<script>
+
+function getSentiment() {
+    var txt = document.getElementById("txt_Text").value;
+	var xmlhttp = new XMLHttpRequest();
+	
+    var url = "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=d0e7bf68cdda677938e6c186eaf2b755ef737cd8&outputMode=json&text="+txt;
+
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "";
+	var out1 = "";
+    out="Your Sentiment Score is "+arr.docSentiment.score+"\n"
+    out+="Type of emotion is "+arr.docSentiment.type+"\n"
+	out+="Language of the text is "+arr.language
+	out1 = "Your%20sentiment%20score%20is%20"+arr.docSentiment.score+"%20And%20your%20Type"+"%20of%20emotion%20is%20"+arr.docSentiment.type+"%20And%20the%20input%20language%20is%20"+arr.language
+    document.getElementById("sentiAnal").value = out;
+	var url='http://api.voicerss.org/?key=6592a8e49d9944feb2d7b38c1c4c3b93&hl=en-us&src='+out1;
+    out='<audio src='+url+' controls> Your browser does not support the audio element. </audio>'
+	document.getElementById("id01").innerHTML = out;
+}
+
+}
+</script>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="app.js"></script>-->
+
+
+</body>
+</html>
