@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Balaji_N\Desktop\ase_labassignments-master\ase_labassignments-master\Lab-5\source\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="1f5102c1355504f60e0edc2e56865888a09367ab">
+        <dex dex="C:\Users\Balaji_N\Desktop\ase_labassignments-master\ase_labassignments-master\Lab-5\source\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_89d805fd5435ea6884a0dda274a732c43c61f938.jar" />
+    </item>
+
+</items>
