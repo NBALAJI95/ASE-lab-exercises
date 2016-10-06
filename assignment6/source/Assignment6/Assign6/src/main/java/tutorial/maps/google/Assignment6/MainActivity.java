@@ -43,24 +43,19 @@ public class MainActivity extends AppCompatActivity {
         LocationListener uclListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {}
-
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {}
-
             @Override
             public void onProviderEnabled(String provider) {}
-
             @Override
             public void onProviderDisabled(String provider) {}
         };
-
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat
                 .checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
         ucl.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                 0, 0, uclListener);
         Latitude = ucl
@@ -69,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         Longitude = ucl
                 .getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 .getLongitude();
-
 
         signup = (Button) findViewById(R.id.signup);
         signup.setOnClickListener(new View.OnClickListener() {
@@ -95,17 +89,11 @@ public class MainActivity extends AppCompatActivity {
                 Address.setText(strReturnedAddress.toString());
             }
             else{
-
             }
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
-
-
         user = (ImageView) findViewById(R.id.img);
-
         user.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -113,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -125,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
             Uri img = data.getData();
             try {
                 p = BitmapFactory.decodeStream(getContentResolver().openInputStream(img));
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -133,4 +120,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
 
