@@ -12,3 +12,5 @@ https://github.com/NBALAJI95/ASE-lab-exercises/wiki/Lab---5 --> Assignment 5
 https://github.com/NBALAJI95/ASE-lab-exercises/wiki/Assignment-6 --> Assignment 6
 
 https://github.com/NBALAJI95/ASE-lab-exercises/wiki/Assignment-7 --> Assignment 7
+
+https://github.com/NBALAJI95/ASE-lab-exercises/wiki/ASSIGNMENT-8 --> Assignment 8
