@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Currency Convertor</title>
+    <div class="container">
+        <div class="bg-info" style="text-align: center;font-family: Arial"><h1>Currency Convertor</h1></div>
+        </div>
+</head>
+<body ng-app=calculate>
+<div ng-controller=calculatectrl>
+    <form>
+    <div class="form-group"> <label for="height"></label>
+        <input type="number" class="form-control" placeholder="Enter amount in US Dollar (USD)" id="height" ng-model="usd">
+    </div>
+<br><br>
+    </form>
+<div class="centered">
+    <button class="btn btn-primary" ng-click="currencyConvertor()">Convert into INR and EUR</button>
+</div>
+    <div class="container">
+    <p ng-model=currency>
+        <br><br>
+        <div class="bg-warning">USD:&nbsp&nbsp{{currency.USD}} $</div>
+        <div class="bg-success">INR:&nbsp&nbsp{{currency.INR}} Rs</div>
+        <div class="bg-warning">EUR:&nbsp&nbsp{{currency.EUR}} euro</div>
+		<hr>
+    </p>
+        </div>
+</div>
+</body>
+</html>
