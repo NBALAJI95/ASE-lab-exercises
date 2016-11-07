@@ -37,6 +37,17 @@ body{
     background-image:url("img/bg.jpg");
     background-size: 1450px 900px;
 }
+
+.cv{
+    table-layout: fixed;
+    padding-left:27%;
+    padding-right: 60%;
+    text-align: right;
+    display: inline-block;
+    color: #204d74;
+    font-size: 14px;	
+}
+
 .formU{
     padding-left:10%;
     padding-right: 5%;
@@ -63,13 +74,4 @@ input[type=submit] {
     font-family: "Calibre";
 }
 
-.container1{
-    table-layout: fixed;
-    padding-left:27%;
-    padding-right: 60%;
-    text-align: right;
-    display: inline-block;
-    color: #204d74;
-    font-size: 14px;	
-}
 
