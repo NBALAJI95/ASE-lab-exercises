@@ -4,22 +4,6 @@ app.run(function ($http) {
     $http.defaults.headers.post['dataType'] = 'json'
 });
 app.controller('MongoController',function($scope,$http){
-    $scope.insert = function(){
-        alert("Registration Successful");
-        var config = {
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        }
-        var req = $http.post('http://127.0.0.1:8081/register',$scope.formData);
-        req.success(function(data, status, headers, config) {
-            console.log(data);
-        });
-        req.error(function(data, status, headers, config) {
-            alert( "failure message: " + JSON.stringify({data: data}));
-        });
-
-    };
     $scope.delete=function () {
         alert("Record Deleted");
         var req = $http.post('http://127.0.0.1:8081/delete');
@@ -41,9 +25,22 @@ app.controller('MongoController',function($scope,$http){
             alert( "failure message: " + JSON.stringify({data: data}));
         });
     }
-    $scope.login=function () {
-        alert("Login Successful");
-    }
+    $scope.insert = function(){
+        alert("Registration Successful");
+        var config = {
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        }
+        var req = $http.post('http://127.0.0.1:8081/register',$scope.formData);
+        req.success(function(data, status, headers, config) {
+            console.log(data);
+        });
+        req.error(function(data, status, headers, config) {
+            alert( "failure message: " + JSON.stringify({data: data}));
+        });
+
+    };
     $scope.records=function () {
         var req = $http.post('http://127.0.0.1:8081/disp');
         req.success(function(data, status, headers, config) {
