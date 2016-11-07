@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="h1">
+<html lang="en">
 <head>
+    <title>Home Page</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="home.css">
-    <title>Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="nodejspgm.js"></script>
 </head>
 <body ng-app="demo">
 
-<div ng-controller="MongoController" ng-init="displayRecords()" >
-    <div id="container" class="container1" >
+<div ng-controller="MongoController" ng-init="records()" >
+    <div id="container" class="cv" >
     </div><br>
 
     <form method="post" action="http://127.0.0.1:8081/delete" autocomplete="on" class="formD" >
-        <input type="text" class="form-control" name="id1" id="id1" placeholder="Enter ID of the record which you want to Delete" >
-        <div class="centered">
-        <br><input type="submit" value="Delete">
+        <input type="text" class="form-control" name="delid" id="delid" placeholder="Enter ID of the record which you want to Delete" >
+        <div>
+        <br><center><input type="submit" value="Delete"></center>
         </div>
     </form>
     <form method="post" action="http://127.0.0.1:8081/update" class="formU">
-        <input type="text" class="form-control" name="id2" id="id2" placeholder="Enter ID of the record which you want to Update"  ><br>
+        <input type="text" class="form-control" name="idv" id="idv" placeholder="Enter ID of the record which you want to Update"  ><br>
         <input type="text" class="form-control" name="fname" id="fname" placeholder="FullName"  ><br>
         <input type="text" class="form-control" name="nat" id="nat" placeholder="Nationality"  ><br>
         <input type="email" class="form-control" placeholder="Email" name="email" id="email"><br>
