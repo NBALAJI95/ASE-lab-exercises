@@ -44,7 +44,7 @@ app.controller('MongoController',function($scope,$http){
     $scope.login=function () {
         alert("Login Successful");
     }
-    $scope.displayRecords=function () {
+    $scope.records=function () {
         var req = $http.post('http://127.0.0.1:8081/disp');
         req.success(function(data, status, headers, config) {
             var col = [];
